@@ -1,0 +1,15 @@
+Install a Docker Container in Windows Server 2019
+=================================================
+Open the WindowsPowershell (Admin)
+Install-Module DockerMsftProvider -Force
+Install-Package -Name docker -ProviderName DockerMsftProvider
+Restart the Machine
+Check the container feature is installed
+Go to powershell
+Get-WindowsFeature -Name containers
+docker --version
+docker info
+docker version
+Get-Service docker
+docker run microsoft/dotnet-samples:dotnetapp-nanoserver-1809
+
