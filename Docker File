@@ -1,0 +1,17 @@
+Run the Jenkins From the Docker Container
+================================
+yum install docker -y
+service docker start
+service docker status
+docker pull jenkins/jenkins
+docker image ls
+mkdir /var/jenkins_home
+chmod 777  /var/jenkins_home/ -R
+docker run -p 9080:8080 -d -v /var/jenkins_home:/var/jenkins_home jenkins/jenkins
+docker container ls
+cd /var/jenkins_home/
+docker container ls ---> copy the container ID
+docker logs -f containerID
+copy the jenkins password
+Browse the Public ip and map the port 1.1.1.1:9080
+paste the Jenkins password
