@@ -1,0 +1,18 @@
+Deploy a Tomcat Container
+======================
+yum install docker -y
+service docker start
+docker pull tomcat:latest
+docker run -itd --name webapp -p 8080:8080 tomcat
+Browse the Public ip:8080 --------> Half Loaded
+docker ps 
+copy the containerID
+docker exec -it containerID /bin/bash
+ls
+cd webapps.dist/
+cp -R * ../webapps
+exit
+cd ..
+ls
+cd webapps
+docker ps
